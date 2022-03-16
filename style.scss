@@ -1,0 +1,148 @@
+$Font-primary: "Kumbh Sans", sans-serif;
+$Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+$Soft-red: hsl(14, 88%, 65%);
+$Soft-violet: hsl(273, 75%, 66%);
+$Soft-blue: hsl(240, 73%, 65%);
+$Very-dark-grayish-blue: hsl(237, 12%, 33%);
+$Dark-grayish-blue: hsl(240, 6%, 50%);
+
+body {
+  background-image: linear-gradient(to top, $Soft-blue, $Soft-violet);
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    position: absolute;
+    top: 405px;
+    left: 90px;
+    z-index: 100;
+  }
+}
+
+.container {
+  width: 900px;
+  height: 500px;
+  background-color: white;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+
+  .images {
+    margin-top: 70px;
+    margin-left: -85px;
+
+    svg {
+      width: 472px;
+      height: 359px;
+    }
+
+    @media screen and (max-width: 10000px) {
+      .desktop {
+        display: block;
+      }
+
+      .mobile {
+        display: none;
+      }
+    }
+  }
+
+  .FAQ {
+    margin-left: 100px;
+    margin-top: 50px;
+    font-family: $Font-primary;
+  }
+}
+
+.accordion {
+  display: flex;
+  font-size: 12px;
+  width: 300px;
+  font-family: $Font-primary;
+  border-bottom: 1px solid hsla(240, 6%, 50%, 0.3);
+
+  .text {
+    width: 300px;
+
+    .section {
+      font-size: 13px;
+      color: $Very-dark-desaturated-blue;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .section:hover {
+      color: $Soft-red;
+    }
+
+    .section.bold {
+      font-size: 14px;
+      font-weight: bold;
+      color: $Very-dark-desaturated-blue;
+    }
+
+    p {
+      height: 0;
+      overflow: hidden;
+      transition: 0.3s ease-in-out;
+    }
+
+    p.show {
+      height: 50px;
+      color: $Dark-grayish-blue;
+    }
+  }
+
+  svg {
+    transform: rotate(180deg);
+    transition: 0.3s ease-in-out;
+    margin-top: 3px;
+  }
+
+  svg.open {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    .box {
+      display: none;
+    }
+  }
+
+  .container {
+    display: block;
+    overflow: visible;
+    height: auto;
+    margin: auto;
+
+    .images {
+      .desktop {
+        display: none;
+      }
+
+      .mobile {
+        display: block;
+        width: 300px;
+        margin: auto;
+        margin-top: -200px;
+        margin-left: 170px;
+      }
+    }
+
+    .FAQ {
+      h1 {
+        margin-left: -100px;
+        text-align: center;
+      }
+    }
+  }
+}
