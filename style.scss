@@ -14,13 +14,6 @@ body {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
-
-  .box {
-    position: absolute;
-    top: 405px;
-    left: 90px;
-    z-index: 100;
-  }
 }
 
 .container {
@@ -32,6 +25,16 @@ body {
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
+
+  .square {
+    position: absolute;
+    left: -10%;
+    top: 40%;
+
+    .box {
+      position: fixed;
+    }
+  }
 
   .images {
     margin-top: 70px;
